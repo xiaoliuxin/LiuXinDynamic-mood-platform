@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lx.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.lx.model.User" >
+
+    <id column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="headImg" property="headImg" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="coin" property="coin" jdbcType="INTEGER" />
+    <result column="exp" property="exp" jdbcType="INTEGER" />
+
+    <association property="follow" javaType="com.lx.model.Follow">
+      <result property="userid" column="userid"/>
+      <result property="followId" column="follow_id"/>
+    </association>
+
+    <collection property="videos" ofType="com.lx.model.Video" >
+      <id property="vid" column="vid" jdbcType="INTEGER" />
+      <result property="vname" column="vname" jdbcType="VARCHAR" />
+      <result property="vImage" column="vImage" jdbcType="VARCHAR" />
+      <result column="typeId" property="typeId" jdbcType="INTEGER" />
+      <result column="vtime" property="vtime" jdbcType="TIMESTAMP"/>
+    </collection>
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+
+    userid, username, password, head_img, content, level, coin, exp
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+
+    delete from user
+    where userid = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lx.model.User" >
+
+    insert into user (userid, username, password, 
+      head_img, content, level, 
+      coin, exp)
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{headImg,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
+      #{coin,jdbcType=INTEGER}, #{exp,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lx.model.User" >
+
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="headImg != null" >
+        head_img,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="coin != null" >
+        coin,
+      </if>
+      <if test="exp != null" >
+        exp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="headImg != null" >
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="coin != null" >
+        #{coin,jdbcType=INTEGER},
+      </if>
+      <if test="exp != null" >
+        #{exp,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lx.model.User" >
+
+    update user
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="headImg != null" >
+        head_img = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="coin != null" >
+        coin = #{coin,jdbcType=INTEGER},
+      </if>
+      <if test="exp != null" >
+        exp = #{exp,jdbcType=INTEGER},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lx.model.User" >
+
+    update user
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      head_img = #{headImg,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      coin = #{coin,jdbcType=INTEGER},
+      exp = #{exp,jdbcType=INTEGER}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+
+  <!-- 登录功能 select * from user where username = 'Guan' and password = '123'-->
+  <select id="login" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select * from user where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
+  </select>
+
+  <!--注册功能-->
+  <insert id="register" parameterType="com.lx.model.User">
+    insert into `user` (username,password,head_Img,content)
+    values(#{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{headImg,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR})
+  </insert>
+
+  <select id="selectInfoByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from user where username = #{username,jdbcType=VARCHAR}
+  </select>
+
+<!-- 查询该用户投稿了哪些视频 -->
+  <select id="select_user_release_videos" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select video.vid ,video.vname ,video.v_image,video.type_id,video.vtime
+    from video INNER JOIN  `user`
+    on video.userid = `user`.userid
+    WHERE `user`.userid = #{userid,jdbcType=INTEGER}
+  </select>
+
+  <!--查询用户ID 1 的关注列表-->
+  <select id="follow_list" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  select `user`.userid,`user`.username,`user`.head_img,`user`.content from `user` where `user`.userid in
+  (
+  select follow_id from follow where follow.userid = #{userid,jdbcType=INTEGER}
+  )
+  </select>
+
+
+  <!--/*查询用户ID 1 的粉丝列表*/-->
+  <select id="fans_list" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select `user`.userid,`user`.username,`user`.head_img,`user`.content  from `user` where `user`.userid in
+    (
+      select follow.userid from follow where follow.follow_id = #{follow_id,jdbcType=INTEGER}
+    )
+  </select>
+
+  <!--修改个性签名-->
+  <update id="updateContentById" parameterType="com.lx.model.User">
+    UPDATE `user` SET content = #{content,jdbcType=VARCHAR} where userid = #{uid,jdbcType=INTEGER}
+  </update>
+
+  <!--/*查询用户经验值*/select username,exp from `user` where userid = 1-->
+  <select id="selectUserExpById" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select exp from `user` where userid = #{userid,jdbcType=INTEGER}
+  </select>
+  <!--/*查询用户等级*/select username,`level` from `user` where userid = 1-->
+  <select id="selectUserLeveLById" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select `level` from `user` where userid = #{userid,jdbcType=INTEGER}
+  </select>
+
+  <!--升级-->
+  <update id="LEVEL_UP" parameterType="java.lang.Integer">
+    UPDATE `user` set `level` = `level`+1
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
+
+  <!--/*点赞、投币、收藏增加10经验*/
+UPDATE `user` SET `user`.exp = `user`.exp + 10 where `user`.userid = 1-->
+  <update id="getExp" parameterType="java.lang.Integer">
+    UPDATE `user` SET `user`.exp = `user`.exp + 10 where `user`.userid = #{userid,jdbcType=INTEGER}
+  </update>
+
+  <!--投币后扣除硬币-->
+  <update id="deduct_coin" parameterType="java.lang.Integer">
+    UPDATE `user` SET `user`.coin = `user`.coin - 1 where `user`.userid = #{userid,jdbcType=INTEGER}
+  </update>
+
+  <!--作者获得硬币-->
+  <update id="author_get_coin" parameterType="java.lang.Integer">
+    UPDATE `user` SET `user`.coin = `user`.coin + 1 where `user`.userid = #{userid,jdbcType=INTEGER}
+  </update>
+
+  <!--升级送硬币-->
+  <update id="levelup_getCoin" parameterType="java.lang.Integer">
+    UPDATE `user` SET `user`.coin = `user`.coin + #{coinNum,jdbcType=INTEGER} where `user`.userid = #{userid,jdbcType=INTEGER}
+  </update>
+
+  <!--/*修改个人信息*/-->
+  <update id="update_user_info" parameterType="com.lx.model.User">
+    update `user` set
+    `user`.username = #{username,jdbcType=VARCHAR},
+    `user`.`password` = #{password,jdbcType=VARCHAR},
+    `user`.head_img = #{headImg,jdbcType=VARCHAR}
+    where `user`.userid = #{userid,jdbcType=INTEGER}
+  </update>
+
+</mapper>

@@ -1,0 +1,483 @@
+body
+{
+    margin: 0 auto;
+    padding: 0;
+    background: url(../img/01.jpg) no-repeat;
+    background-size: 100%;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+ul,li
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navs
+{
+    background: white;
+}
+
+#head_imgs{
+
+    width: 43px;height: 43px;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#left_img
+{
+    width: 50px;height: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#userInfo
+{
+    width: 1100px;
+    height: 1000px;
+    margin: 0 auto 4px;
+    margin-top: 55px;
+
+    border-radius: 5px;
+    overflow: hidden;
+}
+#h_info
+{
+    width: 100%;
+    height: 200px;
+    background: url(../img/line_background.png);
+}
+
+#h_user
+{
+
+    width: 60%;
+    height: 50%;
+    position: relative;
+    top: 50%;
+    left: 50px;
+}
+#head
+{
+    width: 15%;
+    height: 100%;
+    vertical-align:top;
+    border-radius: 50%;
+}
+#username
+{
+    font-size: 16px;
+    font-family:"微软雅黑";
+    color: white;
+    font-weight: bold;
+    margin-left: 12px;
+}
+#level
+{
+    font-family: "comic sans ms";
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    background: #F25D8E;
+    border-radius: 16%;
+    width: 35px;
+    text-align: center;
+}
+#content
+{
+    width: 80%;
+    position: relative;
+    left: -50px;top: -50px;
+}
+#content input
+{
+    width: 80%;
+    background: none;
+    border: none;
+    color: black;
+}
+#changeContent{display: none;}
+
+#exp
+{
+    position: absolute;
+    float: left;
+    width: 600px;
+    height: 25px;
+    font-family: "comic sans ms";
+    font-weight: bold;
+}
+#exp progress
+{
+    width: 40%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#follow_fans
+{
+    width: 100%;
+    height: 100%;
+    background: white;
+    font-family: "微软雅黑";
+    font-weight: bold;
+}
+
+#coin
+{
+    position: absolute;
+    float: left;
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/icon2.png);
+    background-position: -150px -470px;
+    vertical-align: middle;
+}
+#CoinNum
+{
+    margin-left:10px ;
+    display: inline-block;
+    background: #F25D8E;
+    border-radius: 5px;
+    color: white;
+}
+#ExpNum
+{
+    display: inline-block;
+    width: 120px;
+
+}
+span[name="my_video_title"]
+{
+    display: block;
+    box-shadow: 2px 2px 5px #888888;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 20px;
+    font-family: "微软雅黑";
+    font-size: 18px;
+}
+#my_videos
+{
+    width: 100%;
+    height: 700px;
+    overflow-y:auto;
+}
+div[name='vid']
+{
+    position: relative;
+    width: 220px;
+    height: 150px;
+    float: left;
+    text-align: center;
+    margin-left:40px;
+    margin-top: 50px;
+}
+div[name='vid'] img
+{
+    border-radius: 3%;
+    width: 100%;
+    height: 100%;
+}
+#fenye
+{
+    position: absolute;
+    top: 800px;
+    left: 44%;
+}
+span[name="video_name"]
+{
+    font-family:"微软雅黑";
+    font-size: 14px;
+    font-weight: bold;
+}
+#my_Collection
+{
+    overflow-y:auto;
+    width: 100%;
+    height: 700px;
+
+}
+#my_video_icon
+{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icons.png);
+    background-position:-141px -908px;
+    vertical-align: middle;
+}
+#my_Collection_icon
+{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icons.png);
+    background-position:-139px -1931px;
+    vertical-align: middle;
+}
+#my_follow_icon
+{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icons.png);
+    background-position:-140px -266px;
+    vertical-align: middle;
+}
+
+#my_fans_icon
+{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icons.png);
+    background-position:-140px -1741px;
+    vertical-align: middle;
+}
+#follow_list
+{
+    width: 100%;
+    height: 700px;
+    overflow-y: auto;
+}
+#follow_list li
+{
+    width: 100%;
+    height: 100px;
+    border-bottom: solid gainsboro 1px;
+    display: block;
+}
+img[name="follow_head"]
+{
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align:top;
+    cursor: pointer;
+}
+span[name="f_name"]
+{
+    display: inline-block;
+    position: relative;
+    top: 25px;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    font-weight: 300;
+    color: black;
+    width: 25%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+span[name="f_content"]
+{
+    display: inline-block;
+    position: relative;
+    top: 53px;
+    left: -280px;
+    font-size: 12px;
+    color: #ADADAD;
+    font-weight: 400;
+    width: 50%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+button[name="del_follow"]
+{
+    position: relative;
+    float: right;
+    top: 30px;
+    right: 15px;
+    display: none;
+}
+#fans_list
+{
+    width: 100%;
+    height: 700px;
+    overflow-y: auto;
+}
+#fans_list li
+{
+    width: 100%;
+    height: 100px;
+    border-bottom: solid gainsboro 1px;
+    display: block;
+}
+
+img[name="fans_head"]
+{
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align:top;
+    cursor: pointer;
+}
+span[name="fans_name"]
+{
+    display: inline-block;
+    position: relative;
+    top: 25px;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    font-weight: 300;
+    color: black;
+    width: 25%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+span[name="fans_content"]
+{
+    display: inline-block;
+    position: relative;
+    top: 53px;
+    left: -280px;
+    font-size: 12px;
+    color: #ADADAD;
+    font-weight: 400;
+    width: 50%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+button[name="add_fans"]
+{
+    position: relative;
+    float: right;
+    top: 30px;
+    right: 15px;
+    display: none;
+}
+#change_userInfo_icon
+{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    background: url(../img/icons.png);
+    background-position: -138px -1803px;
+}
+#change_userInfo_from
+{
+    width: 100%;
+    padding-left: 60px;
+    padding-top: 40px;
+}
+#ManuScript_Manager
+{
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    background: url(../img/icons.png);
+    background-position: -140px -1356px;
+}
+
+#ManuScripts
+{
+    width: 100%;
+    height: 700px;
+    overflow-y:auto;
+
+}
+#ManuScripts li
+{
+    width: 100%;
+    height: 200px;
+    border-bottom: solid gainsboro 1px;
+    display: block;
+
+}
+
+img[name="Manu_imgs"]
+{
+    width: 220px;
+    height: 150px;
+
+    border-radius: 5%;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+    left: 20px;
+    top: 30px;
+}
+div[name="Manu_info"]
+{
+    width: 650px;
+    height: 150px;
+
+    position: relative;
+    line-height: 65px;
+    float: left;
+    left: 40px;
+    top: 30px;
+}
+input[name="Manu_title"]
+{
+    font-family: "微软雅黑";
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+
+
+}
+span[name="Manu_type"]
+{
+    font-size: 14px;
+    font-weight: 300;
+    color: #666666;
+}
+span[name="Manu_date"]
+{
+    font-size: 12px;
+    font-weight: 300;
+    color: gray;
+}
+div[name="edit_Manu_btns"]
+{
+    position: relative;
+    float: right;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    top: 30px;
+    right: 10px;
+    display: none;
+
+
+}
+div[name="edit_Manu_btns"] button
+{
+    width: 120px;
+}

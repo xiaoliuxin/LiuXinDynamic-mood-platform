@@ -1,0 +1,367 @@
+body
+{
+    margin: 0 auto;
+    padding: 0;
+}
+a
+{
+    text-decoration: none;
+    color: black;
+}
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+ul,li
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#head_imgs{
+
+    width: 43px;height: 43px;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#left_img
+{
+    width: 50px;height: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#navs
+{
+    background: white;
+}
+#videoInfo
+{
+    width: 1100px;
+    height: 1600px;
+    margin: 0 auto 4px;
+    margin-top: 55px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#video_head
+{
+
+    width: 100%;
+    height: 100px;
+    display: inline-block;
+}
+#video_title
+{
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 100%;
+    line-height: 40px;
+}
+
+
+#title
+{
+    font-family:"Microsoft YaHei",微软雅黑;
+    color: black;
+    font-weight: bold;
+    font-size: 19px;
+    display: inline-block;
+    width: 100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+#type
+{
+    color: #C0C0C0;
+    margin-right: 20px;
+}
+#time
+{
+    color: #C0C0C0;
+}
+#video_userInfo
+{
+    position: relative;
+    float: right;
+
+    width: 350px;
+    height: 100%;
+}
+
+#v_user_head
+{
+    margin: 10px;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    vertical-align: top;
+}
+
+#v_user_head img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#username_and_follow
+{
+    width: 200px;
+
+    position: relative;
+    float: left;
+    top: -85px;
+    left: 120px;
+}
+#username_and_follow span
+{
+    font-family: "微软雅黑";
+    font-size: 16px;
+    font-weight: 300;
+}
+#username_and_follow button
+{
+    width: 180px;
+}
+#play_video
+{
+    width: 100%;
+    height: 650px;
+    background: black;
+}
+#SanLian
+{
+    border: 1px solid gainsboro;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+}
+#SanLian a
+{
+    margin-right: 40px;
+    margin-left: 20px;
+    color: deepskyblue;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "微软雅黑";
+}
+
+#not_dianzan
+{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../img/icons-comment.png);
+    background-position: -150px -22px;/*未点赞*/
+}
+#dianzaned
+{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../img/icons.png);
+    background-position: -532px -1234px;/*已点赞*/
+}
+#give_coin
+{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../img/icon2.png);
+    background-position: -150px -470px;/*未投币*/
+}
+
+#give_coineds
+{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../img/icons.png);
+    background-position: -660px -2004px;/*已投币*/
+}
+#not_login_give_coined
+{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../img/icons.png);
+    background-position: -660px -2004px;/*已投币*/
+}
+#Wshoucang
+{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../img/icons.png);
+    background-position: -658px -405px;/*未收藏*/
+}
+
+#Yshoucang
+{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: url(../img/icons.png);
+    background-position: -726px -405px;/*已收藏*/
+}
+
+#SanLian i
+{
+    vertical-align: middle;
+}
+#talking
+{
+    width: 100%;
+    display: block;
+    height: 750px;
+    /*	border: #3E408A 2px solid;*/
+}
+#talking_title
+{
+    color: black;
+    font-family: "微软雅黑";
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 50px;
+    display: block;
+    /*background: #3E408A;*/
+    box-shadow: 2px 2px 2px #888888;
+}
+#Send
+{
+    text-align: center;
+    width: 100%;
+    height: 100px;
+
+    box-shadow: 1px 1px 1px #888888;
+}
+#not_login_send
+{
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    font-weight: 300;
+    line-height: 100px;
+    font-size: 20px;
+    box-shadow: 1px 1px 1px #888888;
+}
+#talk_text
+{
+    margin-top: 10px;
+    width: 600px;
+    height: 70px;
+    border-radius: 6px;
+    vertical-align: bottom;
+}
+#sendbtn
+{
+    height: 70px;
+    width: 80px;
+}
+#talk_user_head
+{
+
+    position: relative;
+    float: left;
+    left: 140px;
+    top: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+#users_talking
+{
+    overflow-y: auto;
+    width: 100%;
+    /*border: 2px solid darkblue;*/
+    height: 600px;
+
+
+}
+.talk_line
+{
+
+    width: 100%;
+    height: 100px;
+    border-bottom: 3px solid ghostwhite;
+}
+.head
+{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin: 15px;
+    /*border: solid 2px #008000;*/
+    border-radius: 50%;
+    vertical-align: top;
+}
+.namez ,.contentz ,.timez
+{
+    position: relative;
+    display: block;
+    /*	border: 2px darkcyan solid;*/
+}
+.namez
+{
+    width: 170px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    top:-90px;
+    left: 100px;
+    color: black;
+    font-weight: 200;
+}
+.contentz
+{
+    height: 45px;
+    width: 820px;
+    top: -80px;
+    left: 130px;
+    font-size: 16px;
+    word-break:break-all;
+    word-wrap:break-word;
+
+}
+.timez
+{
+    float: right;
+    top: -100px;
+    right: 10px;
+    color: #999;
+    font-size: 13px;
+}
+#register_icon
+{
+    display: inline-flex ;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icons.png);
+    background-position: -141px -140px;
+    vertical-align:middle;
+}
+#login_icon
+{
+    display: inline-flex ;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icons.png);
+    background-position:-141px -203px;
+    vertical-align:middle;
+}
+button[name="deleteMess"]
+{
+    display: none;
+    position: relative;
+    float: right;
+    top: -150px;
+    right: -92px;
+    width: 100px;
+    height: 40px;
+}
